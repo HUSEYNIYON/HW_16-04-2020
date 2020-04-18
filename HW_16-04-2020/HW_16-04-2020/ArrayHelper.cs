@@ -22,16 +22,29 @@ namespace HW_16_04_2020
             return a;
         }
 
-        public void Push(ref T[] Array, T vr)
+        public void Push(ref T[] Array1, T vr)
         {
-            T[] array = new T[Array.Length + 1];
-            for (int i = 0; i < Array.Length; i++)
+            T[] array1 = new T[Array1.Length + 1];
+            for (int i = 0; i < Array1.Length; i++)
             {
-                array[i] = Array[i];
+                array1[i] = Array1[i];
 
             }
-            array[array.Length - 1] = vr;
-            Array = array;
+            array1[array1.Length - 1] = vr;
+            Array1 = array1;
+        }
+
+        public T Shift(ref T[] Array2)
+        {
+            T[] array2 = new T[Array2.Length - 1];
+            for (int i = 0; i < array2.Length; i++)
+            {
+                array2[i] = Array2[i + 1];
+
+            }
+            T k = Array2[0];
+            Array2 = array2;
+            return k;
         }
 
 

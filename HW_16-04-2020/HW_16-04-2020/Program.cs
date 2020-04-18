@@ -10,7 +10,7 @@ namespace HW_16_04_2020
     {
         static void Main(string[] args)
         {
-            //Method POP:
+            
             Console.Write("Enter a size of an array: ");
             int arrSize = Convert.ToInt32(Console.ReadLine());
             int[] digits =new int[arrSize];
@@ -49,14 +49,42 @@ namespace HW_16_04_2020
             }
             Console.WriteLine();
             Console.WriteLine("After:");
-            ArrayHelper<string> ar1 = new ArrayHelper<string>();
+            ArrayHelper<int> ar1 = new ArrayHelper<int>();
             Console.WriteLine("Which number you want to add: ");
             ar.Push(ref digits1, Convert.ToInt32(Console.ReadLine()));
             foreach (int digit in digits1)
             {
                 Console.Write(" "+digit+" ");
             }
+            Console.WriteLine();
+
+            //Medthod Shift
+            Console.Write("Enter a size of an array: ");
+            int arrSize2 = Convert.ToInt32(Console.ReadLine());
+            int[] digits2 = new int[arrSize2];
+            Random rand2 = new Random();
+            Console.WriteLine("Before:");
+            for (int i = 0; i < digits2.Length; i++)
+            {
+                digits2[i] = rand.Next(9);
+            }
+            foreach (int digit in digits2)
+            {
+                Console.Write("" + digit + "\t");
+            }
+            Console.WriteLine();
+            Console.WriteLine("After:");
+            ArrayHelper<int> array2 = new ArrayHelper<int>();
+            array2.Shift(ref digits2);
+
+            foreach (int digit in digits2)
+            {
+                Console.Write("\t"+digit);
+            }
             Console.ReadKey();
+
+
+
         }
     }
 
