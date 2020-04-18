@@ -81,6 +81,31 @@ namespace HW_16_04_2020
             {
                 Console.Write("\t"+digit);
             }
+            Console.WriteLine();
+
+            //Medthod UnShift
+            Console.Write("Enter a size of an array: ");
+            int arrSize3 = Convert.ToInt32(Console.ReadLine());
+            int[] digits3 = new int[arrSize3];
+            Random rand3 = new Random();
+            Console.WriteLine("Before:");
+            for (int i = 0; i < digits3.Length; i++)
+            {
+                digits3[i] = rand.Next(9);
+            }
+            foreach (int digit in digits3)
+            {
+                Console.Write("\t" + digit + "");
+            }
+            Console.WriteLine();
+            Console.WriteLine("After:");
+            Console.Write("Which number you want to add: ");
+            ArrayHelper<string> ar3 = new ArrayHelper<string>();
+            ar.UnShift(ref digits3, Convert.ToInt32(Console.ReadLine()));
+            foreach (int digit in digits3)
+            {
+                Console.Write("" + digit+"\t");
+            }
             Console.ReadKey();
 
 

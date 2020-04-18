@@ -47,6 +47,17 @@ namespace HW_16_04_2020
             return k;
         }
 
+        public void UnShift(ref T[] Array3, T put)
+        {
+            T[] array3 = new T[Array3.Length + 1];
+            array3[0] = put;
+            for (int i = 0; i < array3.Length - 1; i++)
+            {
+                array3[i + 1] = Array3[i];
+            }
+            Array3 = array3;
+        }
+
 
     }
 }
