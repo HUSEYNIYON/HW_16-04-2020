@@ -11,15 +11,29 @@ namespace HW_16_04_2020
         public T Pop(ref T[] Array)
         {
 
-            T[] arr = new T[Array.Length - 1];
+            T[] array = new T[Array.Length - 1];
             for (int i = 0; i < Array.Length - 1; i++)
             {
-                arr[i] = Array[i];
+                array[i] = Array[i];
 
             }
             T a = Array[Array.Length - 1];
-            Array = arr;
+            Array = array;
             return a;
         }
+
+        public void Push(ref T[] Array, T vr)
+        {
+            T[] array = new T[Array.Length + 1];
+            for (int i = 0; i < Array.Length; i++)
+            {
+                array[i] = Array[i];
+
+            }
+            array[array.Length - 1] = vr;
+            Array = array;
+        }
+
+
     }
 }
