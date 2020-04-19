@@ -10,7 +10,6 @@ namespace HW_16_04_2020
     {
         static void Main(string[] args)
         {
-            
             Console.WriteLine("There five command to choice:");
             Console.WriteLine("1--> Delete the last element of an array!");
             Console.WriteLine("2--> Add an element in the end of an array!");
@@ -18,8 +17,10 @@ namespace HW_16_04_2020
             Console.WriteLine("4--> Add an element in the begin of an array!");
             Console.WriteLine("5--> Display a copy of an previous array!");
         ll:
+            Console.WriteLine();
+            Console.Write("You choice: ");
             int MyChoice = Convert.ToInt32(Console.ReadLine());
-            switch(MyChoice)
+            switch (MyChoice)
             {
                 case 1:
                     Console.Write("Enter a size of an array: ");
@@ -62,7 +63,7 @@ namespace HW_16_04_2020
                     Console.WriteLine();
                     Console.WriteLine("After:");
                     ArrayHelper<int> ar1 = new ArrayHelper<int>();
-                    Console.WriteLine("Which number you want to add: ");
+                    Console.Write("Which number you want to add: ");
                     ar1.Push(ref digits1, Convert.ToInt32(Console.ReadLine()));
                     foreach (int digit in digits1)
                     {
@@ -118,13 +119,25 @@ namespace HW_16_04_2020
                     {
                         Console.Write("" + digit + "\t");
                     }
+                    Console.WriteLine();
                     break;
-
+                case 5:
+                    Console.Write("Enter begin_index: ");
+                    int begin_index = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Enter end_index: ");
+                    int end_index = Convert.ToInt32(Console.ReadLine());
+                    string[] InputArr = new string[] { "ant", "bison", "camel", "duck", "elephant"};
+                    foreach (string i in ArrayHelper<string>.Slice(InputArr,begin_index,end_index))
+                    {
+                        Console.Write($"{i}\t");
+                    }
+                    Console.WriteLine();
+                    break;
+                default:
+                    Console.WriteLine("Ooops! You are out of memory!");
+                    break;
             }
             goto ll;
-            Console.ReadKey();
         }
     }
-
-   
 }
